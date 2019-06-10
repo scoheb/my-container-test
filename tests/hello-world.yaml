@@ -39,6 +39,16 @@
           shell: oc project {{ openshift_project_name }}
         - name: Add system:image-puller role to system:authenticated group in {{ openshift_project_name }}
           shell: oc adm policy add-role-to-group system:image-puller system:authenticated -n {{ openshift_project_name }}
+        - name: List secrets
+          shell: oc get secrets
+        - name: List rolebindings
+          shell: oc get rolebinding
+        - name: Describe local rolebindings
+          shell: oc describe rolebinding.rbac -n  {{ openshift_project_name }}
+        - name: Create local rolebinding
+          shell: oc create role podview --verb=get --resource=pod -n {{ openshift_project_name }}
+        - name: Delete local rolebinding
+          shell: oc delete role podview -n {{ openshift_project_name }}
         - name: Import the image into OpenShift
           shell: oc import-image {{ image_name }} --from={{ image_full_name }} --insecure=true --confirm
         - name: Get imported image registry URL
