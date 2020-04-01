@@ -1,0 +1,60 @@
+artifacts: []
+description: Elytron configuration scripts
+envs:
+- description: Use Elytron to configure TLS and associated configuration elements.
+  example: 'true'
+  name: CONFIGURE_ELYTRON_SSL
+- description: Elytron application security domain to configure undertow and ejb3.
+  name: ELYTRON_SECDOMAIN_NAME
+- description: Absolute or relative to jboss.server.config.dir path to properties
+    file that contains users and passwords.
+  name: ELYTRON_SECDOMAIN_USERS_PROPERTIES
+- description: Absolute or relative to jboss.server.config.dir path to properties
+    file that contains users to roles mapping.
+  name: ELYTRON_SECDOMAIN_ROLES_PROPERTIES
+- description: If set to true, the default elytron security domain will be used. The
+    users and roles are retrieved from the server default files.
+  name: ELYTRON_SECDOMAIN_CORE_REALM
+- description: If defined along with HTTPS_KEYSTORE_DIR and HTTPS_KEYSTORE, sets the
+    password to open the keystore.
+  example: mypassword
+  name: HTTPS_PASSWORD
+- description: The password used to protect the private key of the generated key pair.
+    If it is undefined, then the HTTPS_PASSWORD value is used as the HTTPS_KEY_PASSWORD.
+  example: mypassword
+  name: HTTPS_KEY_PASSWORD
+- description: If defined along with HTTPS_PASSWORD and HTTPS_KEYSTORE, sets the path
+    to directory containing keystore file. If leading directory separator is omitted,
+    interpreted to be relative to jboss.server.config.dir.
+  example: /some/directory/path/
+  name: HTTPS_KEYSTORE_DIR
+- description: If defined along with HTTPS_PASSWORD and HTTPS_KEYSTORE_DIR, sets the
+    name of the keystore containing the key to use for TLS.
+  example: mykeystore.jks
+  name: HTTPS_KEYSTORE
+- description: The underlying type of the keystore (JKS, JCEKS, etc.). Defaults to
+    JCEKS
+  example: JKS
+  name: HTTPS_KEYSTORE_TYPE
+- description: The name of the Elytron security domain.
+  example: MySecurityDomain
+  name: SECDOMAIN_NAME
+execute:
+- directory: jboss.container.wildfly.launch.elytron
+  module_name: jboss.container.wildfly.launch.elytron
+  name: jboss.container.wildfly.launch.elytron/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.elytron
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

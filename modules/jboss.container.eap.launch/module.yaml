@@ -1,0 +1,34 @@
+artifacts: []
+description: Module that enables CLI configuration for standalone-openshift.xml file
+envs:
+- name: DEFAULT_ADMIN_USERNAME
+  value: eapadmin
+- description: Enable the Access Log.
+  example: 'true'
+  name: ENABLE_ACCESS_LOG
+- description: If set to any non zero length value then the image will prevent shutdown
+    with the TERM signal and will require execution of the shutdown command through
+    jboss-cli.
+  example: 'true'
+  name: CLI_GRACEFUL_SHUTDOWN
+execute:
+- directory: jboss.container.eap.launch
+  module_name: jboss.container.eap.launch
+  name: jboss.container.eap.launch/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install:
+  - name: os-eap-migration
+  repositories: []
+name: jboss.container.eap.launch
+osbs: {}
+packages:
+  install:
+  - hostname
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

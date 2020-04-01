@@ -1,0 +1,26 @@
+artifacts: []
+description: Configures the response header filters
+envs:
+- description: 'Comma separated list of filter names. For each filter the following
+    env vars must be set: <filter>_FILTER_RESPONSE_HEADER_NAME, <filter>_FILTER_RESPONSE_HEADER_VALUE.
+    Optionaly <filter>_FILTER_REF_NAME can be set.'
+  name: FILTERS
+execute:
+- directory: jboss.container.wildfly.launch.filters
+  module_name: jboss.container.wildfly.launch.filters
+  name: jboss.container.wildfly.launch.filters/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.filters
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

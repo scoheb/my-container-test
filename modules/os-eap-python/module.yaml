@@ -1,0 +1,22 @@
+artifacts: []
+description: os-eap-python installer
+envs: []
+execute:
+- directory: os-eap-python
+  module_name: os-eap-python
+  name: os-eap-python/configure.sh
+  script: configure.sh
+labels: []
+modules:
+  install: []
+  repositories: []
+name: os-eap-python
+osbs: {}
+packages:
+  install:
+  - python36
+  repositories: []
+ports: []
+schema_version: 1
+version: '3.6'
+volumes: []

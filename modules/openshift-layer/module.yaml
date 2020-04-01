@@ -1,0 +1,22 @@
+artifacts: []
+description: Legacy openshift-layer script package.
+envs: []
+execute:
+- directory: openshift-layer
+  module_name: openshift-layer
+  name: openshift-layer/configure_layers.sh
+  script: configure_layers.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: openshift-layer
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

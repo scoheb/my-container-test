@@ -1,0 +1,25 @@
+artifacts: []
+description: os-eap-probes common scripts
+envs:
+- description: Disable the boot errors check in the probes.
+  example: 'true'
+  name: PROBE_DISABLE_BOOT_ERRORS_CHECK
+execute:
+- directory: os-eap-probes-common
+  module_name: os-eap-probes-common
+  name: os-eap-probes-common/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: os-eap-probes-common
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

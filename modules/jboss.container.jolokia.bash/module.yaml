@@ -1,0 +1,43 @@
+artifacts:
+- md5: 760f2fbaf6b142192f3cee2c99bfcbf8
+  name: jolokia-jvm
+  target: jolokia-jvm-1.6.2.redhat-00002-agent.jar
+description: ^ Provides support for configuring Jolokia.  Basic usage is opts="$JBOSS_CONTAINER_JOLOKIA_MODULE/jolokia-opts"
+envs:
+- name: JBOSS_CONTAINER_JOLOKIA_MODULE
+  value: /opt/jboss/container/jolokia
+- name: JOLOKIA_VERSION
+  value: 1.6.2
+- name: AB_JOLOKIA_PASSWORD_RANDOM
+  value: 'true'
+- name: AB_JOLOKIA_AUTH_OPENSHIFT
+  value: 'true'
+- name: AB_JOLOKIA_HTTPS
+  value: 'true'
+execute:
+- directory: jboss.container.jolokia.bash
+  module_name: jboss.container.jolokia.bash
+  name: jboss.container.jolokia.bash/configure.sh
+  script: configure.sh
+- directory: jboss.container.jolokia.bash
+  module_name: jboss.container.jolokia.bash
+  name: jboss.container.jolokia.bash/backward_compatibility.sh
+  script: backward_compatibility.sh
+labels:
+- name: io.fabric8.s2i.version.jolokia
+  value: 1.6.2-redhat-00002
+modules:
+  install:
+  - name: jboss.container.jolokia.api
+  repositories: []
+name: jboss.container.jolokia.bash
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports:
+- name: 8778
+  value: 8778
+schema_version: 1
+version: '1.0'
+volumes: []

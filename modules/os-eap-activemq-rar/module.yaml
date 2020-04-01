@@ -1,0 +1,25 @@
+artifacts:
+- md5: 3e9758751e0a1efb29d1e624a495ddde
+  name: activemq-rar-5.11.0.redhat-630371.rar
+  url: https://maven.repository.redhat.com/ga/org/apache/activemq/activemq-rar/5.11.0.redhat-630371/activemq-rar-5.11.0.redhat-630371.rar
+description: Legacy os-eap-activemq-rar script package.
+envs: []
+execute:
+- directory: os-eap-activemq-rar
+  module_name: os-eap-activemq-rar
+  name: os-eap-activemq-rar/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: os-eap-activemq-rar
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.1'
+volumes: []

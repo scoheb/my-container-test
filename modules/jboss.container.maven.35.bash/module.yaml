@@ -1,0 +1,28 @@
+artifacts: []
+description: Provides Maven v3.5 capabilities to an image.
+envs:
+- name: JBOSS_CONTAINER_MAVEN_35_MODULE
+  value: /opt/jboss/container/maven/35/
+- name: MAVEN_VERSION
+  value: '3.5'
+execute:
+- directory: jboss.container.maven.35.bash
+  module_name: jboss.container.maven.35.bash
+  name: jboss.container.maven.35.bash/configure.sh
+  script: configure.sh
+labels:
+- name: io.fabric8.s2i.version.maven
+  value: '3.5'
+modules:
+  install: []
+  repositories: []
+name: jboss.container.maven.35.bash
+osbs: {}
+packages:
+  install:
+  - maven
+  repositories: []
+ports: []
+schema_version: 1
+version: '3.5'
+volumes: []

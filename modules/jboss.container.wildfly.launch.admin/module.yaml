@@ -1,0 +1,26 @@
+artifacts: []
+description: Configures the admin user and associated management realm
+envs:
+- description: Admin user name. Used to secure http management interface.
+  name: ADMIN_USERNAME
+- description: Admin user password.
+  name: ADMIN_PASSWORD
+execute:
+- directory: jboss.container.wildfly.launch.admin
+  module_name: jboss.container.wildfly.launch.admin
+  name: jboss.container.wildfly.launch.admin/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.admin
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

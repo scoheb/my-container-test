@@ -1,0 +1,41 @@
+artifacts: []
+description: Populate user maven repository and build galleon FP.
+envs:
+- description: Mandatory. WildFly server version.
+  name: WILDFLY_VERSION
+- description: Mandatory.URL to maven wildfly dist artifact.
+  name: WILDFLY_DIST_MAVEN_LOCATION
+- description: Mandatory. One or more URL to maven repositories used by offliner to
+    retrieve maven artifacts. Format "--url <maven repo url> [--url <maven repo url>]
+  name: OFFLINER_URLS
+- description: Mandatory. Absolute path to galleon feature-pack maven project.
+  name: GALLEON_FP_PATH
+- description: Mandatory. Name of galleon package that contains common content.
+  name: GALLEON_FP_COMMON_PKG_NAME
+- description: Optional. Maven arguments to use when building galleon feature-pack.
+  name: GALLEON_BUILD_FP_MAVEN_ARGS_APPEND
+- name: OFFLINER_VERSION
+  value: '1.6'
+- description: By default the feature-pack sources are deleted. Set this variable
+    to true to keep it in the image (mainly for debug purpose).
+  name: DEBUG_GALLEON_FP_SRC
+execute:
+- directory: jboss.container.wildfly.galleon.build-feature-pack
+  module_name: jboss.container.wildfly.galleon.build-feature-pack
+  name: jboss.container.wildfly.galleon.build-feature-pack/configure.sh
+  script: configure.sh
+  user: 185
+labels: []
+modules:
+  install:
+  - name: jboss.container.maven.default.bash
+  repositories: []
+name: jboss.container.wildfly.galleon.build-feature-pack
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

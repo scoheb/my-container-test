@@ -1,0 +1,28 @@
+artifacts:
+- md5: 4b0a15b48fa9413cdd9a6cbb858450b6
+  name: rh-sso-7.3.1-eap7-adapter
+  target: rh-sso-7.3.1-eap7-adapter.zip
+- md5: f0bd62882ab63ee8db15752c02a7d818
+  name: rh-sso-7.3.1-saml-eap7-adapter
+  target: rh-sso-7.3.1-saml-eap7-adapter.zip
+description: Legacy os-eap70-sso script package.
+envs: []
+execute:
+- directory: os-eap70-sso
+  module_name: os-eap70-sso
+  name: os-eap70-sso/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: os-eap70-sso
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

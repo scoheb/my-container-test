@@ -1,0 +1,22 @@
+artifacts: []
+description: Galleon base layers for openshift.
+envs: []
+execute:
+- directory: jboss.container.wildfly.galleon.fp-content.base-layers
+  module_name: jboss.container.wildfly.galleon.fp-content.base-layers
+  name: jboss.container.wildfly.galleon.fp-content.base-layers/configure.sh
+  script: configure.sh
+  user: 185
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.galleon.fp-content.base-layers
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

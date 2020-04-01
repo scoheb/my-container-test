@@ -1,0 +1,22 @@
+artifacts: []
+description: Server common node name functionality
+envs: []
+execute:
+- directory: jboss.container.wildfly.launch.os.node-name
+  module_name: jboss.container.wildfly.launch.os.node-name
+  name: jboss.container.wildfly.launch.os.node-name/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.os.node-name
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

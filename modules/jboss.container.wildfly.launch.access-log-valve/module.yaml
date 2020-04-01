@@ -1,0 +1,29 @@
+artifacts: []
+description: Configures the access-log valve and log handler
+envs:
+- description: If true add the access-log to the hosts in the undertow subsystem.
+  example: 'true'
+  name: ENABLE_ACCESS_LOG
+- description: If true and ENABLE_ACCESS_LOG is also true, adds a TRACE level log
+    category to the logging subsystem
+  example: 'true'
+  name: ENABLE_ACCESS_LOG_TRACE
+execute:
+- directory: jboss.container.wildfly.launch.access-log-valve
+  module_name: jboss.container.wildfly.launch.access-log-valve
+  name: jboss.container.wildfly.launch.access-log-valve/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.access-log-valve
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

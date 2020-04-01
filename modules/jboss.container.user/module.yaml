@@ -1,0 +1,32 @@
+artifacts: []
+description: Configures the jboss user and permissions.  This module should be included
+  by all images.
+envs:
+- name: HOME
+  value: /home/jboss
+execute:
+- directory: jboss.container.user
+  module_name: jboss.container.user
+  name: jboss.container.user/configure.sh
+  script: configure.sh
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.user
+osbs: {}
+packages:
+  install:
+  - unzip
+  - tar
+  - rsync
+  - shadow-utils
+  repositories: []
+ports: []
+run:
+  name: run
+  user: 185
+  workdir: /home/jboss
+schema_version: 1
+version: '1.0'
+volumes: []

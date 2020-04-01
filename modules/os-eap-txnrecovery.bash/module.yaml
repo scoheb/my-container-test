@@ -1,0 +1,21 @@
+artifacts: []
+description: Transaction recovery migration pod script package.
+envs: []
+execute:
+- directory: os-eap-txnrecovery.bash
+  module_name: os-eap-txnrecovery.bash
+  name: os-eap-txnrecovery.bash/install_as_root.sh
+  script: install_as_root.sh
+labels: []
+modules:
+  install: []
+  repositories: []
+name: os-eap-txnrecovery.bash
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

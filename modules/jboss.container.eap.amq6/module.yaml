@@ -1,0 +1,22 @@
+artifacts: []
+description: rar to interact with AMQ6 packaged in FP
+envs: []
+execute:
+- directory: jboss.container.eap.amq6
+  module_name: jboss.container.eap.amq6
+  name: jboss.container.eap.amq6/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.eap.amq6
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

@@ -1,0 +1,22 @@
+artifacts: []
+description: Query OpenShift API running with Python 3.
+envs: []
+execute:
+- directory: os-eap-txnrecovery.run
+  module_name: os-eap-txnrecovery.run
+  name: os-eap-txnrecovery.run/install_as_root.sh
+  script: install_as_root.sh
+labels: []
+modules:
+  install:
+  - name: os-eap-txnrecovery.bash
+  repositories: []
+name: os-eap-txnrecovery.run
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: python3
+volumes: []

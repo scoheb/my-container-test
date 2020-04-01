@@ -1,0 +1,28 @@
+artifacts: []
+description: Provision the default server in JBOSS_HOME.
+envs:
+- description: Mandatory. Absolute path to directory that contains galleon default
+    server provisioning.xml file.
+  name: GALLEON_DEFAULT_SERVER
+- description: Optional. Maven arguments to use when provisioning the default server.
+  name: GALLEON_PROVISON_FP_MAVEN_ARGS_APPEND
+execute:
+- directory: jboss.container.wildfly.galleon.provision-server
+  module_name: jboss.container.wildfly.galleon.provision-server
+  name: jboss.container.wildfly.galleon.provision-server/configure.sh
+  script: configure.sh
+  user: 185
+labels: []
+modules:
+  install:
+  - name: jboss.container.maven.default.bash
+  repositories: []
+name: jboss.container.wildfly.galleon.provision-server
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

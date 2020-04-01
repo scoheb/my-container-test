@@ -1,0 +1,25 @@
+artifacts: []
+description: Configures the socket binding group port offset
+envs:
+- description: If defined changes the socket binding group port offset.
+  example: '100'
+  name: PORT_OFFSET
+execute:
+- directory: jboss.container.wildfly.launch.port-offset
+  module_name: jboss.container.wildfly.launch.port-offset
+  name: jboss.container.wildfly.launch.port-offset/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.port-offset
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

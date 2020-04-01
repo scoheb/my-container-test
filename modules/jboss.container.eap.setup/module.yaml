@@ -1,0 +1,23 @@
+artifacts: []
+description: JBoss Enterprise Application Platform setup JBOSS_HOME
+envs:
+- name: SSO_FORCE_LEGACY_SECURITY
+  value: 'true'
+execute:
+- directory: jboss.container.eap.setup
+  module_name: jboss.container.eap.setup
+  name: jboss.container.eap.setup/configure.sh
+  script: configure.sh
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.eap.setup
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

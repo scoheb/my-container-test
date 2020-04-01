@@ -1,0 +1,25 @@
+artifacts: []
+description: Installs the $JBOSS_HOME/bin/launch/json_logging.sh file
+envs:
+- description: Enable JSON-formatted logging
+  example: 'true'
+  name: ENABLE_JSON_LOGGING
+execute:
+- directory: jboss.container.wildfly.launch.json-logging
+  module_name: jboss.container.wildfly.launch.json-logging
+  name: jboss.container.wildfly.launch.json-logging/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.json-logging
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

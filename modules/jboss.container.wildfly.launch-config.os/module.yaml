@@ -1,0 +1,28 @@
+artifacts: []
+description: wildfly launch scripts
+envs:
+- description: Comma-separated list of package names that will be appended to the
+    JBOSS_MODULES_SYSTEM_PKGS environment variable.
+  example: org.jboss.byteman
+  name: JBOSS_MODULES_SYSTEM_PKGS_APPEND
+- name: JBOSS_MODULES_SYSTEM_PKGS
+  value: org.jboss.logmanager,jdk.nashorn.api,com.sun.crypto.provider
+execute:
+- directory: jboss.container.wildfly.launch-config.os
+  module_name: jboss.container.wildfly.launch-config.os
+  name: jboss.container.wildfly.launch-config.os/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch-config.os
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

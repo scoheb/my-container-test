@@ -1,0 +1,22 @@
+artifacts: []
+description: Scripts to adjust the configuration via xml markers or CLI
+envs: []
+execute:
+- directory: jboss.container.wildfly.launch-config.config
+  module_name: jboss.container.wildfly.launch-config.config
+  name: jboss.container.wildfly.launch-config.config/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch-config.config
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

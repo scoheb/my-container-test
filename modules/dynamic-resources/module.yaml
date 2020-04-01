@@ -1,0 +1,28 @@
+artifacts: []
+description: Legacy dynamic-resources script package.
+envs:
+- description: Deprecated. See JAVA_INITIAL_MEM_RATIO.
+  example: 0.5
+  name: INITIAL_HEAP_PERCENT
+- description: Deprecated. See JAVA_MAX_MEM_RATIO.
+  example: 0.5
+  name: CONTAINER_HEAP_PERCENT
+execute:
+- directory: dynamic-resources
+  module_name: dynamic-resources
+  name: dynamic-resources/install.sh
+  script: install.sh
+labels: []
+modules:
+  install:
+  - name: jboss.container.java.jvm.bash
+  repositories: []
+name: dynamic-resources
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

@@ -1,0 +1,27 @@
+artifacts: []
+description: Customization of common Maven S2I for EAP S2I images.
+envs: []
+execute:
+- directory: jboss.container.eap.s2i.galleon
+  module_name: jboss.container.eap.s2i.galleon
+  name: jboss.container.eap.s2i.galleon/configure.sh
+  script: configure.sh
+- directory: jboss.container.eap.s2i.galleon
+  module_name: jboss.container.eap.s2i.galleon
+  name: jboss.container.eap.s2i.galleon/backward_compatibility.sh
+  script: backward_compatibility.sh
+labels: []
+modules:
+  install:
+  - name: jboss.container.wildfly.s2i.bash
+  repositories: []
+name: jboss.container.eap.s2i.galleon
+osbs: {}
+packages:
+  install:
+  - diffutils
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

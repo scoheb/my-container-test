@@ -1,0 +1,73 @@
+artifacts: []
+description: Keycloak launch script.
+envs:
+- description: Application name
+  name: APPLICATION_NAME
+- description: Custom http Route Hostname
+  name: HOSTNAME_HTTP
+- description: Custom https Route Hostname
+  name: HOSTNAME_HTTPS
+- description: true or false. SSO Client Access Type.
+  name: SSO_BEARER_ONLY
+- description: true or false. Enable/disable validation.
+  name: SSO_DISABLE_SSL_CERTIFICATE_VALIDATION
+- description: true or false. Enable CORS for SSO applications.
+  name: SSO_ENABLE_CORS
+- description: The password for the keycloak service user.
+  name: SSO_PASSWORD
+- description: Principal attribute.
+  name: SSO_PRINCIPAL_ATTRIBUTE
+- description: SSO Public Key.
+  name: SSO_PUBLIC_KEY
+- description: The SSO realm to which the application client(s) should be associated
+    (e.g. demo).
+  name: SSO_REALM
+- description: Certificate name
+  name: SSO_SAML_CERTIFICATE_NAME
+- description: The name of the keystore file.
+  name: SSO_SAML_KEYSTORE
+- description: Keystore directory.
+  name: SSO_SAML_KEYSTORE_DIR
+- description: Keystore password.
+  name: SSO_SAML_KEYSTORE_PASSWORD
+- description: Logout page.
+  name: SSO_SAML_LOGOUT_PAGE
+- description: true or false. Validate or not signature.
+  name: SSO_SAML_VALIDATE_SIGNATURE
+- description: The SSO Client Secret.
+  name: SSO_SECRET
+- description: By default 'keycloak' is use.
+  name: SSO_SECURITY_DOMAIN
+- description: The name of the truststore file.
+  name: SSO_TRUSTSTORE
+- description: Certificate alias.
+  name: SSO_TRUSTSTORE_CERTIFICATE_ALIAS
+- description: Location of truststore.
+  name: SSO_TRUSTSTORE_DIR
+- description: The password for the truststore and certificate (e.g. mykeystorepass).
+  name: SSO_TRUSTSTORE_PASSWORD
+- description: The URL for the SSO server.
+  name: SSO_URL
+- description: The username used to access the SSO service.
+  name: SSO_USERNAME
+- description: In order to use legacy security subsystem if present.
+  name: SSO_FORCE_LEGACY_SECURITY
+execute:
+- directory: jboss.container.wildfly.launch.keycloak
+  module_name: jboss.container.wildfly.launch.keycloak
+  name: jboss.container.wildfly.launch.keycloak/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.keycloak
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

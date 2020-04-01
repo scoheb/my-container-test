@@ -1,0 +1,21 @@
+artifacts: []
+description: Install settings to run galleon in osbs
+envs: []
+execute:
+- directory: jboss.container.eap.galleon.build-settings
+  module_name: jboss.container.eap.galleon.build-settings
+  name: jboss.container.eap.galleon.build-settings/configure.sh
+  script: configure.sh
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.eap.galleon.build-settings
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: osbs
+volumes: []

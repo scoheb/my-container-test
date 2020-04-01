@@ -1,0 +1,18 @@
+artifacts: []
+description: Legacy openshift-passwd script package.
+envs: []
+execute: []
+labels: []
+modules:
+  install:
+  - name: jboss.container.user
+  repositories: []
+name: openshift-passwd
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

@@ -1,0 +1,33 @@
+artifacts: []
+description: ^ Defines environment variables and labels used by Maven s2i.  Modules
+  implementing Maven S2I should use these variables accordingly.
+envs:
+- description: 'Relative paths of source directories to scan for build output, which
+    will be copied to $DEPLOY_DIR.  Defaults to **target**
+
+    '
+  example: target
+  name: MAVEN_S2I_ARTIFACT_DIRS
+- description: 'Space separated list of goals to be executed with maven build, e.g.
+    mvn $MAVEN_S2I_GOALS.  Defaults to **package**
+
+    '
+  example: package install
+  name: MAVEN_S2I_GOALS
+- description: Deprecated by **MAVEN_S2I_ARTIFACT_DIRS**.
+  name: ARTIFACT_DIR
+execute: []
+labels: []
+modules:
+  install:
+  - name: jboss.container.s2i.core.api
+  repositories: []
+name: jboss.container.maven.s2i.api
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

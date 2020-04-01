@@ -1,0 +1,130 @@
+artifacts: []
+description: ^ Defines environment variables used for configuring Maven.  Modules
+  providing support for configuring Maven should use the variables listed within this
+  module to configure Maven appropriately.
+envs:
+- description: Arguments to use when calling Maven, replacing the default `package
+    hawt-app:build -DskipTests -e`. Please be sure to run the `hawt-app:build` goal
+    (when not already bound to the `package` execution phase), otherwise the startup
+    scripts won't work.
+  example: -e -Popenshift -DskipTests -Dcom.redhat.xpaas.repo.redhatga package
+  name: MAVEN_ARGS
+- description: Additional Maven arguments.
+  example: -X -am -pl
+  name: MAVEN_ARGS_APPEND
+- description: If set then the Maven repository is removed after the artifact is built.
+    This is useful for keeping the created application image small, but prevents *incremental*
+    builds. Will be overridden by **S2I_ENABLE_INCREMENTAL_BUILDS**.  Defaults to
+    *false*.
+  name: MAVEN_CLEAR_REPO
+- description: The base URL of a mirror used for retrieving artifacts.
+  example: http://10.0.0.1:8080/repository/internal/
+  name: MAVEN_MIRROR_URL
+- description: 'If set, multi-mirror support is enabled, and other MAVEN_MIRROR_*
+    variables will be prefixed. For example: DEV_ONE_MAVEN_MIRROR_URL and QE_TWO_MAVEN_MIRROR_URL'
+  example: dev-one,qe-two
+  name: MAVEN_MIRRORS
+- description: ID to be used for the specified mirror.  If ommitted, a unique ID will
+    be generated.
+  example: internal-mirror
+  name: prefix_MAVEN_MIRROR_ID
+- description: Repository IDs mirrored by this entry.  Defaults to external:*
+  name: prefix_MAVEN_MIRROR_OF
+- description: The URL of the mirror.
+  example: http://10.0.0.1:8080/repository/internal
+  name: prefix_MAVEN_MIRROR_URL
+- description: Location of custom Maven settings.xml file to use.
+  example: /home/jboss/.m2/settings.xml
+  name: MAVEN_SETTINGS_XML
+- description: Directory to use as the local Maven repository.
+  example: /home/jboss/.m2/repository
+  name: MAVEN_LOCAL_REPO
+- description: 'If set, multi-repo support is enabled, and other MAVEN_REPO_* variables
+    will be prefixed. For example: DEV_ONE_MAVEN_REPO_URL and QE_TWO_MAVEN_REPO_URL'
+  example: dev-one,qe-two
+  name: MAVEN_REPOS
+- description: Maven repository id
+  example: my-repo-id
+  name: prefix_MAVEN_REPO_ID
+- description: Maven repository name
+  example: my-repo-name
+  name: prefix_MAVEN_REPO_NAME
+- description: Maven repository layout
+  example: default
+  name: prefix_MAVEN_REPO_LAYOUT
+- description: Maven repository releases enabled
+  example: 'true'
+  name: prefix_MAVEN_REPO_RELEASES_ENABLED
+- description: Maven repository releases update policy
+  example: always
+  name: prefix_MAVEN_REPO_RELEASES_UPDATE_POLICY
+- description: Maven repository releases checksum policy
+  example: warn
+  name: prefix_MAVEN_REPO_RELEASES_CHECKSUM_POLICY
+- description: Maven repository snapshots enabled
+  example: 'true'
+  name: prefix_MAVEN_REPO_SNAPSHOTS_ENABLED
+- description: Maven repository snapshots update policy
+  example: always
+  name: prefix_MAVEN_REPO_SNAPSHOTS_UPDATE_POLICY
+- description: Maven repository snapshots checksum policy
+  example: warn
+  name: prefix_MAVEN_REPO_SNAPSHOTS_CHECKSUM_POLICY
+- description: Maven repository username
+  example: mavenUser
+  name: prefix_MAVEN_REPO_USERNAME
+- description: Maven repository password
+  example: maven1!
+  name: prefix_MAVEN_REPO_PASSWORD
+- description: Maven repository private key
+  example: ${user.home}/.ssh/id_dsa
+  name: prefix_MAVEN_REPO_PRIVATE_KEY
+- description: Maven repository passphrase
+  example: maven1!
+  name: prefix_MAVEN_REPO_PASSPHRASE
+- description: Maven repository file permissions
+  example: '664'
+  name: prefix_MAVEN_REPO_FILE_PERMISSIONS
+- description: Maven repository directory permissions
+  example: '775'
+  name: prefix_MAVEN_REPO_DIRECTORY_PERMISSIONS
+- description: Maven repository url (fully defined)
+  example: http://repo.example.com:8080/maven2/
+  name: prefix_MAVEN_REPO_URL
+- description: Maven repository protocol (if not using fully defined url; will fallback
+    to service)
+  example: http
+  name: prefix_MAVEN_REPO_PROTOCOL
+- description: Maven repository host (if not using fully defined url; will fallback
+    to service)
+  example: repo.example.com
+  name: prefix_MAVEN_REPO_HOST
+- description: Maven repository port (if not using fully defined url; will fallback
+    to service)
+  example: '8080'
+  name: prefix_MAVEN_REPO_PORT
+- description: Maven repository path (if not using fully defined url; will fallback
+    to service)
+  example: /maven2/
+  name: prefix_MAVEN_REPO_PATH
+- description: Maven repository service to lookup if prefix_MAVEN_REPO_URL not specified
+  example: buscentr-myapp
+  name: prefix_MAVEN_REPO_SERVICE
+- description: ^ **DEPRECATED, use MAVEN_LOCAL_REPO** Directory to use as the local
+    Maven repository.
+  example: /home/jboss/.m2
+  name: MAVEN_REPO_LOCAL
+execute: []
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.maven.api
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

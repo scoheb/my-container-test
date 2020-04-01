@@ -1,0 +1,26 @@
+artifacts: []
+description: Legacy os-eap-deployment-scanner script package.
+envs:
+- description: Controls whether exploded deployment content should be automatically
+    deployed.
+  example: 'true'
+  name: AUTO_DEPLOY_EXPLODED
+execute:
+- directory: jboss.container.wildfly.launch.deployment-scanner
+  module_name: jboss.container.wildfly.launch.deployment-scanner
+  name: jboss.container.wildfly.launch.deployment-scanner/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.deployment-scanner
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

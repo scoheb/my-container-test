@@ -1,0 +1,28 @@
+artifacts: []
+description: EAP common migration scripts
+envs:
+- description: The number of seconds after which the recovery process will timeout.
+  example: '360'
+  name: RECOVERY_TIMEOUT
+- description: The number of seconds to pause between checks for recovery completion.
+  example: '10'
+  name: RECOVERY_PAUSE
+execute:
+- directory: os-eap-migration
+  module_name: os-eap-migration
+  name: os-eap-migration/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: os-eap-migration
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

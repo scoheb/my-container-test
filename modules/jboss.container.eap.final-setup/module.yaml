@@ -1,0 +1,22 @@
+artifacts: []
+description: Final setup
+envs: []
+execute:
+- directory: jboss.container.eap.final-setup
+  module_name: jboss.container.eap.final-setup
+  name: jboss.container.eap.final-setup/configure.sh
+  script: configure.sh
+  user: 185
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.eap.final-setup
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

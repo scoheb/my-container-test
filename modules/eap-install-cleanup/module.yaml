@@ -1,0 +1,21 @@
+artifacts: []
+description: Cleans up filesystem after EAP installation and upgrades.
+envs: []
+execute:
+- directory: eap-install-cleanup
+  module_name: eap-install-cleanup
+  name: eap-install-cleanup/install.sh
+  script: install.sh
+labels: []
+modules:
+  install: []
+  repositories: []
+name: eap-install-cleanup
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

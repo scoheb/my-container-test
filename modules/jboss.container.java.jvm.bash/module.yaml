@@ -1,0 +1,30 @@
+artifacts: []
+description: ^ Provides support for configuring Java JVM, e.g. GC settings, etc.  Basic
+  usage is opts=$($JBOSS_CONTAINER_JAVA_JVM_MODULE/java-default-options)
+envs:
+- name: JBOSS_CONTAINER_JAVA_JVM_MODULE
+  value: /opt/jboss/container/java/jvm
+execute:
+- directory: jboss.container.java.jvm.bash
+  module_name: jboss.container.java.jvm.bash
+  name: jboss.container.java.jvm.bash/configure.sh
+  script: configure.sh
+- directory: jboss.container.java.jvm.bash
+  module_name: jboss.container.java.jvm.bash
+  name: jboss.container.java.jvm.bash/backward_compatibility.sh
+  script: backward_compatibility.sh
+labels: []
+modules:
+  install:
+  - name: jboss.container.java.jvm.api
+  - name: jboss.container.java.proxy.bash
+  repositories: []
+name: jboss.container.java.jvm.bash
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

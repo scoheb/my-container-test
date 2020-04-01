@@ -1,0 +1,22 @@
+artifacts: []
+description: keycloak content to add to fp.
+envs: []
+execute:
+- directory: jboss.container.wildfly.galleon.fp-content.keycloak
+  module_name: jboss.container.wildfly.galleon.fp-content.keycloak
+  name: jboss.container.wildfly.galleon.fp-content.keycloak/configure.sh
+  script: configure.sh
+  user: 185
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.galleon.fp-content.keycloak
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

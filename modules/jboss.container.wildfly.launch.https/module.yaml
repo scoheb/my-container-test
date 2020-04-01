@@ -1,0 +1,37 @@
+artifacts: []
+description: Configures legacy SSL
+envs:
+- description: If defined along with HTTPS_KEYSTORE_DIR and HTTPS_KEYSTORE, sets the
+    password to open the keystore.
+  example: p@ssw0rd
+  name: HTTPS_PASSWORD
+- description: If defined along with HTTPS_PASSWORD and HTTPS_KEYSTORE, sets the path
+    of the keystore.
+  example: /opt/jboss/wildfly
+  name: HTTPS_KEYSTORE_DIR
+- description: If defined along with HTTPS_PASSWORD and HTTPS_KEYSTORE_DIR, sets the
+    SSL certificate key file.
+  example: ssl.key
+  name: HTTPS_KEYSTORE
+- description: The provider for loading the keystore.
+  example: JKS
+  name: HTTPS_KEYSTORE_TYPE
+execute:
+- directory: jboss.container.wildfly.launch.https
+  module_name: jboss.container.wildfly.launch.https
+  name: jboss.container.wildfly.launch.https/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.https
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

@@ -1,0 +1,25 @@
+artifacts: []
+description: Adjusts the logger category
+envs:
+- description: Comma separated list of <logger-name>:<level>
+  example: com.my.package:TRACE,com.my.other.package:ALL
+  name: LOGGER_CATEGORIES
+execute:
+- directory: jboss.container.wildfly.launch.logger-category
+  module_name: jboss.container.wildfly.launch.logger-category
+  name: jboss.container.wildfly.launch.logger-category/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.launch.logger-category
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

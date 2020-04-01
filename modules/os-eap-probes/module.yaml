@@ -1,0 +1,24 @@
+artifacts: []
+description: os-eap-probes script package for python 3
+envs: []
+execute:
+- directory: os-eap-probes
+  module_name: os-eap-probes
+  name: os-eap-probes/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install:
+  - name: os-eap-probes-common
+  repositories: []
+name: os-eap-probes
+osbs: {}
+packages:
+  install:
+  - python3-requests
+  repositories: []
+ports: []
+schema_version: 1
+version: '3.0'
+volumes: []

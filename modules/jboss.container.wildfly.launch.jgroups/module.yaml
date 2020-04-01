@@ -1,0 +1,73 @@
+artifacts: []
+description: Installs the $JBOSS_HOME/bin/launch/ files to configure JGroups
+envs:
+- description: Password used to authenticate the node so it is allowed to join the
+    JGroups cluster. Required, when using ASYM_ENCRYPT JGroups cluster traffic encryption
+    protocol. If not set, authentication is disabled, cluster communication is not
+    encrypted and a warning is issued. Optional, when using SYM_ENCRYPT JGroups cluster
+    traffic encryption protocol.
+  example: p@ssw0rd
+  name: JGROUPS_CLUSTER_PASSWORD
+- description: Name of the keystore file within the secret specified via JGROUPS_ENCRYPT_SECRET
+    variable. If it is not set when using SYM_ENCRYPT JGroups cluster traffic encryption
+    protocol, the cluster communication is not encrypted and a warning is issued.
+    If it is not set when using ASYM_ENCRYPT JGroups cluster traffic encryption protocol,
+    the cluster communication is encrypted without using Elytron keystore.
+  example: jgroups.jceks
+  name: JGROUPS_ENCRYPT_KEYSTORE
+- description: Optional. A non absolute directory path of the keystore file within
+    the secret specified via JGROUPS_ENCRYPT_SECRET variable. If it is not set, then
+    the keystore file is relative to the servers ${jboss.server.config.dir}
+  example: /etc/jgroups-encrypt-secret-volume
+  name: JGROUPS_ENCRYPT_KEYSTORE_DIR
+- description: "Name associated with the server\u2019s certificate. If it is not set\
+    \ when using SYM_ENCRYPT JGroups cluster traffic encryption protocol, the cluster\
+    \ communication is not encrypted and a warning is issued. If it is not set when\
+    \ using ASYM_ENCRYPT JGroups cluster traffic encryption protocol, the cluster\
+    \ communication is encrypted without using Elytron keystore."
+  example: jgroups
+  name: JGROUPS_ENCRYPT_NAME
+- description: Password used to access the keystore and the certificate, when using
+    SYM_ENCRYPT JGroups cluster traffic encryption protocol. If it is not set when
+    using SYM_ENCRYPT JGroups cluster traffic encryption protocol, the cluster communication
+    is not encrypted and a warning is issued. If it is not set when using ASYM_ENCRYPT
+    JGroups cluster traffic encryption protocol, the cluster communication is encrypted
+    without using Elytron keystore.
+  example: p@ssw0rd
+  name: JGROUPS_ENCRYPT_PASSWORD
+- description: JGroups protocol to use for encryption of cluster traffic. Can be either
+    SYM_ENCRYPT or ASYM_ENCRYPT. Defaults to SYM_ENCRYPT.
+  example: SYM_ENCRYPT
+  name: JGROUPS_ENCRYPT_PROTOCOL
+- description: Name of the secret, containing the JGroups keystore file used for securing
+    the JGroups communications. If it is not set when using SYM_ENCRYPT JGroups cluster
+    traffic encryption protocol, the cluster communication is not encrypted and a
+    warning is issued. If it is not set when using ASYM_ENCRYPT JGroups cluster traffic
+    encryption protocol, the cluster communication is encrypted without using Elytron
+    keystore.
+  example: app-secret
+  name: JGROUPS_ENCRYPT_SECRET
+- description: JGroups protocol to use for node discovery. Can be either openshift.DNS_PING
+    or kubernetes.KUBE_PING.
+  example: openshift.DNS_PING
+  name: JGROUPS_PING_PROTOCOL
+execute:
+- directory: jboss.container.wildfly.launch.jgroups
+  module_name: jboss.container.wildfly.launch.jgroups
+  name: jboss.container.wildfly.launch.jgroups/configure.sh
+  script: configure.sh
+  user: '185'
+labels: []
+modules:
+  install:
+  - name: jboss.container.wildfly.launch.os.node-name
+  repositories: []
+name: jboss.container.wildfly.launch.jgroups
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

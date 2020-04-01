@@ -1,0 +1,22 @@
+artifacts: []
+description: Configure settings location.
+envs: []
+execute:
+- directory: jboss.container.wildfly.galleon.fp-content.mvn
+  module_name: jboss.container.wildfly.galleon.fp-content.mvn
+  name: jboss.container.wildfly.galleon.fp-content.mvn/configure.sh
+  script: configure.sh
+  user: 185
+labels: []
+modules:
+  install: []
+  repositories: []
+name: jboss.container.wildfly.galleon.fp-content.mvn
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

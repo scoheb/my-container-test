@@ -1,0 +1,23 @@
+artifacts: []
+description: jolokia content to add to fp.
+envs: []
+execute:
+- directory: jboss.container.wildfly.galleon.fp-content.jolokia
+  module_name: jboss.container.wildfly.galleon.fp-content.jolokia
+  name: jboss.container.wildfly.galleon.fp-content.jolokia/configure.sh
+  script: configure.sh
+  user: 185
+labels: []
+modules:
+  install:
+  - name: jboss.container.jolokia.bash
+  repositories: []
+name: jboss.container.wildfly.galleon.fp-content.jolokia
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

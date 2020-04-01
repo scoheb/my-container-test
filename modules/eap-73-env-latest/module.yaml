@@ -1,0 +1,19 @@
+artifacts: []
+description: Red Hat JBoss Enterprise Application Platform latest version env module
+envs: []
+execute: []
+labels: []
+modules:
+  install:
+  - name: eap-73-env
+    version: 7.3.0
+  repositories: []
+name: eap-73-env-latest
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []

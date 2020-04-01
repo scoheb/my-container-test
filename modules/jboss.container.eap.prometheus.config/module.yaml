@@ -1,0 +1,24 @@
+artifacts: []
+description: Provides Prometheus JMX Exporter configuration
+envs: []
+execute:
+- directory: jboss.container.eap.prometheus.config
+  module_name: jboss.container.eap.prometheus.config
+  name: jboss.container.eap.prometheus.config/configure.sh
+  script: configure.sh
+  user: 185
+labels: []
+modules:
+  install:
+  - name: jboss.container.prometheus.bash
+  - name: jboss.container.eap.prometheus.jmx-exporter-config
+  repositories: []
+name: jboss.container.eap.prometheus.config
+osbs: {}
+packages:
+  install: []
+  repositories: []
+ports: []
+schema_version: 1
+version: '1.0'
+volumes: []
