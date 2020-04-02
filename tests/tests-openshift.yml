@@ -26,8 +26,9 @@
   - name: "Select our project"
     shell: oc project {{ openshift_project_name }}
 
-  - name: "create test file"
+  - name: "create test files"
     shell:
       cmd: |
-          echo "abc" > {{ cvp_artifacts_dir }}/pod-log.txt
+          echo "abc" > {{ cvp_artifacts_dir }}/abc.txt
+          echo "def" > {{ cvp_artifacts_dir }}/def.txt
 
